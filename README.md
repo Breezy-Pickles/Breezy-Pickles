@@ -1,7 +1,7 @@
 # Breezy-Pickles
 
 > Plan a custom route to save and share.
-[HomePage](readme/HomePage.png)
+![HomePage](readme/HomePage.png)
 
 ## Team
 
@@ -73,7 +73,7 @@ Specify path of data directory if default data directory not used:
 mongod --dbpath <path to directory>
 ```
 
-### Start server
+#### Start server
 ```sh
 node server/server.js
 ```
