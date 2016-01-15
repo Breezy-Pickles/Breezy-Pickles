@@ -1,10 +1,11 @@
 # Breezy-Pickles
 
-> Plan a route. Share it with your friends.
+> Plan a custom route to save and share.
+[HomePage](readme/HomePage.png)
 
 ## Team
 
-  - __Product Owner__: Kim Ha
+  - __Product Owner__: Kimberly Ha
   - __Scrum Master__: CJ Apel
   - __Development Team Members__: Andrew Deal, Tracy Duong
 
@@ -16,10 +17,13 @@
     1. [Installing Dependencies](#installing-dependencies)
     1. [Tasks](#tasks)
 1. [Team](#team)
+1. [Architecture](#Architecture)
+
+## Architecture
+![PathFinderArchitecture](readme/PathFinderArchitecture.png)
 
 ## Usage
 
-> Create an account to get access to your own personal dashboard. Use the Create Maps page to draw custom routes, set the title, and click save to create a copy of your map in your dashboard.
 
 ## Requirements
 
@@ -41,9 +45,35 @@
 ### Installing Dependencies
 
 From within the root directory:
-
 ```sh
 sudo npm install -g bower
 npm install
 bower install
+```
+
+### Local Database Setup
+#### Install MongoDb
+```sh
+brew update
+brew install mongodb
+```
+####Run MongoDB
+Create data directory from root directory:
+```sh 
+mkdir -p /data/db
+```
+Run from data directory:
+```sh 
+mongod
+```
+OR 
+
+Specify path of data directory if default data directory not used:
+```sh 
+mongod --dbpath <path to directory>
+```
+
+### Start server
+```sh
+node server/server.js
 ```
