@@ -1,25 +1,71 @@
 # Breezy-Pickles
 
-> Plan a route. Share it with your friends.
+> Plan a custom route to save and share.
+![HomePage](readme/HomePage.png)
 
-## Team
-
-  - __Product Owner__: Kim Ha
-  - __Scrum Master__: CJ Apel
-  - __Development Team Members__: Andrew Deal, Tracy Duong
 
 ## Table of Contents
 
+1. [Team](#team)
+1. [Architecture](#Architecture)
+1. [Setup](#setup)
+    1. [Installing Dependencies](#installing-dependencies)
+    1. [Running Local](#local startup)
 1. [Usage](#Usage)
 1. [Requirements](#requirements)
-1. [Development](#development)
-    1. [Installing Dependencies](#installing-dependencies)
-    1. [Tasks](#tasks)
-1. [Team](#team)
+
+## Team
+
+  - __Product Owner__: Kimberly Ha
+  - __Scrum Master__: CJ Apel
+  - __Development Team Members__: Andrew Deal, Tracy Duong
+
+## Architecture
+![PathFinderArchitecture](readme/PathFinderArchitecture.png)
+
+
+## Setup
+
+### Installing Dependencies
+
+From within the root directory:
+```sh
+sudo npm install -g bower
+npm install
+bower install
+```
+
+### Local Startup
+#### Install MongoDb
+```sh
+brew update
+brew install mongodb
+```
+####Run MongoDB
+Create data directory from root directory:
+```sh 
+mkdir -p /data/db
+```
+Run from data directory:
+```sh 
+mongod
+```
+OR 
+
+Specify path of data directory if default data directory not used:
+```sh 
+mongod --dbpath <path to directory>
+```
+
+#### Start server
+```sh
+node server/server.js
+```
 
 ## Usage
+Once dependencies are installed and local server is running, access application at localhost:3000. 
 
-> Create an account to get access to your own personal dashboard. Use the Create Maps page to draw custom routes, set the title, and click save to create a copy of your map in your dashboard.
+Create an account to make and save custom paths on the dashboard. 
 
 ## Requirements
 
@@ -35,15 +81,3 @@
   - "skeleton": "~2.0.4",
   - "bootstrap": "~3.3.5",
   - "angular-route": "~1.4.7",
-
-## Development
-
-### Installing Dependencies
-
-From within the root directory:
-
-```sh
-sudo npm install -g bower
-npm install
-bower install
-```
