@@ -10,8 +10,11 @@ module.exports = {
         res.status(400).send('That username already exists in the database!');
       }
       else {
-        new User(userInfo).save();
-        res.status(200).send('user added');
+        new User(userInfo).save().then(function (user) {
+          if(user){
+            res.status(200).send(user._id)
+          }
+        })
       }
     }, function (err) {
       console.error(err);
