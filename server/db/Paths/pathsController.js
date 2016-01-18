@@ -8,7 +8,7 @@ module.exports = {
     new Path(pathInfo).save( function (err) {
       if (err) {
         console.error(err);
-        //res.status(500).send("There was an error adding the path");
+        res.status(500).send("There was an error adding the path");
       } 
       else {
         console.log('path saved successfully!')

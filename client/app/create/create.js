@@ -45,8 +45,8 @@ angular.module('breezy.create', [])
 
     // Create new map element
     var map = new google.maps.Map(document.getElementById('map'), { 
-      center: {lat: -33.8688, lng: 151.2195},
-      zoom: 13,
+      center: {lat: 37.7749, lng: -122.4194},
+      zoom: 12,
       mapTypeId: google.maps.MapTypeId.ROADMAP
     });
     $scope.map = map;
@@ -146,8 +146,7 @@ $scope.addLatLng = function addLatLng(event) {
     $http.post('/paths', JSON.stringify(mapInfo)).then(function () {
       console.log($scope.title + ' saved successfully!');
     });
-    $scope.poly.setPath([]);
-    $scope.title = '';
+    $location.path('/dashboard')
   }
   $scope.initAutocomplete();
 }]);
